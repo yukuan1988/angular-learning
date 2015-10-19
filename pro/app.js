@@ -139,4 +139,12 @@
     };
 
   });
+
+  angular.module('headerApp', []).controller('TimeController', function($scope) {
+      $scope.year = new Date().getFullYear();
+  });
+  angular.element(document).ready(function() {
+    angular.bootstrap(document.getElementById('header-app'), ['headerApp']);
+  });
+
 })();
