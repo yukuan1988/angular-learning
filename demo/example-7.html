@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="angular.js"></script>
+  <script>
+  angular.module("mainModule", [])
+  .controller("mainController", function ($scope)
+  {
+    // Initialization
+    $scope.areAllPeopleSelected = false;
+
+    $scope.people = [
+      {firstName: "John", lastName: "Doe"},
+      {firstName: "Bob", lastName: "Smith"},
+      {firstName: "Jack", lastName: "White"},
+      {firstName: "Michael", lastName: "Green"}
+    ];
+
+    $scope.selectablePeople = [
+      {firstName: "John", lastName: "Doe", isSelected: false},
+      {firstName: "Bob", lastName: "Smith", isSelected: false},
+      {firstName: "Jack", lastName: "White", isSelected: false},
+      {firstName: "Michael", lastName: "Green", isSelected: false}
+    ];
+
+    $scope.stringsArray = [];
+    var currStringIndex = 0;
+
+    // Utility functions
+    $scope.updatePeopleSelection = function (peopleArray, selectionValue) {
+      for (var i = 0; i < peopleArray.length; i++)
+      {
+        peopleArray[i].isSelected = selectionValue;
+      }
+    };
+
+    $scope.getPersonPositionDesc = function(isFirst, isMiddle, isLast, isEven, isOdd) {
+      var result = "";
+
+      if (isFirst)
+      {
+        result = "(first";
+      }
+      else if (isMiddle)
+      {
+        result = "(middle";
+      }
+      else if (isLast)
+      {
+        result = "(last";
+      }
+
+      if (isEven)
+      {
+        result += "-even)";
+      }
+      else if (isOdd)
+      {
+        result += "-odd)";
+      }
+
+      return result;
+    };
+
+    $scope.addStringToArray = function () {
+      $scope.stringsArray.push("Item " + currStringIndex);
+      currStringIndex++;
+    };
+
+    $scope.removeStringFromArray = function (stringIndex) {
+      if (stringIndex >= 0 && stringIndex < $scope.stringsArray.length)
+      {
+        $scope.stringsArray.splice(stringIndex, 1);
+      }
+    };
+  });
+        </script>
+
+  <style>
+    table
+    {
+      border-collapse: collapse;
+    }
+
+    table, th, td
+    {
+      border: 1px solid #e1e1e1;
+    }
+
+    th, td
+    {
+      padding: 6px;
+    }
+
+    thead
+    {
+      background-color: #fcfcfc;
+    }
+  </style>
+</head>
+
+<body data-ng-app="mainModule">
+  <div data-ng-controller="mainController">
+    <h3>1. Simple table</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="person in people">
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>2. Table with rows selection</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>
+          <input type="checkbox" data-ng-model="areAllPeopleSelected"
+                 data-ng-change="updatePeopleSelection(selectablePeople, areAllPeopleSelected)" />
+        </th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr data-ng-repeat="person in selectablePeople">
+        <td><input type="checkbox" data-ng-model="person.isSelected" /></td>
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>3. List with special variables</h3>
+    <ul>
+      <li data-ng-repeat="person in people">
+        {{$index + 1}}. {{person.firstName}} {{person.lastName}} <strong>{{getPersonPositionDesc($first, $middle, $last, $even, $odd)}}</strong>
+      </li>
+    </ul>
+    <br />
+    <h3>4. Nested lists with object's properties</h3>
+    <ul>
+      <li data-ng-repeat="person in selectablePeople">
+        <strong>Object {{$index + 1}}</strong>
+        <ul>
+          <li data-ng-repeat="(propName, propValue) in person">
+            {{$index + 1}}. <strong>name =</strong> {{propName}}, <strong>value =</strong> {{propValue}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <br />
+    <h3>5. Add and remove items</h3>
+    <button data-ng-click="addStringToArray()">Add item</button><br />
+    <br />
+    <table>
+      <tbody>
+      <tr data-ng-repeat="str in stringsArray">
+        <td><button data-ng-click="removeStringFromArray($index)">Remove</button></td>
+        <td>{{str}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

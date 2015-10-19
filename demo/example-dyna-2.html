@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.aa {
+	background-color: #F00;
+}
+
+.animated-element.ng-enter {
+	-webkit-transition: 2.5s linear all;
+	transition: 2.5s linear all;
+}
+
+.animated-element.ng-enter {
+	opacity: 0;
+}
+
+.animated-element.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+</style>
+<script src="angular.min.js"></script>
+<script src="angular-animate.min.js"></script>
+<script>
+  angular.module("mainModule", [ "ngAnimate" ]).controller("mainController", function() {
+    // Initialization
+    this.people = [ {
+      firstName : "John",
+      lastName : "Doe",
+      age : 30
+    }, {
+      firstName : "Bob",
+      lastName : "Smith",
+      age : 26
+    }, {
+      firstName : "Jack",
+      lastName : "White",
+      age : 47
+    }, {
+      firstName : "Michael",
+      lastName : "Green",
+      age : 41
+    } ];
+    this.newfirstname = "kuan";
+    this.newlastname = "kuan";
+    this.age = 28;
+    // Utility functions
+    this.customArrayFilter = function(item) {
+      return (item.lastName.indexOf('it') != -1 || item.age >= 40);
+    };
+  });
+</script>
+
+</head>
+
+<body data-ng-app="mainModule">
+  <div data-ng-controller="mainController as ctrl">
+    <h3>1. Object's properties filter (alternative 1)</h3>
+    <div>
+      <p class="aa animated-element" data-ng-repeat="person in ctrl.people ">
+        <span>{{person.firstName}}</span> <span>{{person.lastName}}</span> <span>{{person.age}}</span>
+      </p>
+    </div>
+    <form name="newUserForm">
+      <input data-ng-model="ctrl.newfirstname" required> <input data-ng-model="ctrl.newlastname" required> <input
+        data-ng-model="ctrl.age" type="number" min="1" required> <input type="submit"
+        data-ng-disabled="newUserForm.$invalid"
+        data-ng-click="ctrl.people.push({firstName:ctrl.newfirstname,lastName:ctrl.newlastname,age:ctrl.age})" value="add"
+        autofocus>
+    </form>
+  </div>
+</body>
+</html>

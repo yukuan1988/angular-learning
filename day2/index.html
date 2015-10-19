@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../lib/angular/angular.min.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body data-ng-app="policyApp">
+  <div data-ng-controller="PolicyListController as ctrl">
+    <div data-ng-include="components/search.html"></div>
+    <table id="policyListTable">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Action</th>
+          <th>Resource</th>
+          <th>Allow/Deny</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="policy in policyList | filter:filterBy | filter:byStatus()" class="policy {{policy.status}}">
+          <td>{{policy.subject}}</td>
+          <td>{{policy.action}}</td>
+          <td>{{policy.resource}}</td>
+          <td>{{policy.ad}}</td>
+          <td><span style="width: 75px; display: inline-block;">{{policy.status}}</span>
+            <button data-ng-disabled="policy.status != 'deactivated'" data-ng-click="policy.status = 'draft'">Activate</button>
+            <button data-ng-disabled="policy.status != 'deployed'" data-ng-click="policy.status = 'deactivated'">Deactivate</button>
+            <button data-ng-disabled="policy.status != 'draft'" data-ng-click="policy.status = 'deployed'">Deploy</button>
+            <i title="Edit" data-ng-click="editPolicy(policy)" class="fa fa-pencil-square-o" style="cursor: pointer;"></i>
+            <i title="Delete" data-ng-click="deletePolicy($index)" class="fa fa-times" style="cursor: pointer;"></i>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <form name="policyForm" novalidate>
+      <label>
+        Subject: <input data-ng-model="policy.subject" required maxlength="20">
+      </label>
+      <label>
+        Resource: <input data-ng-model="policy.resource" required maxlength="20">
+      </label>
+      <label>
+        Action: <input data-ng-model="policy.action" required maxlength="20">
+      </label>
+      <label>
+        allow <input type="radio" data-ng-model="policy.ad" value="allow" required>
+      </label>
+      <label>
+        deny <input type="radio" data-ng-model="policy.ad" value="deny" required>
+      </label>
+      <br>
+      <label data-ng-show="ad == 'deny'">
+        Alert Message
+        <textarea data-ng-model="alertMsg"></textarea>
+      </label>
+      <br> <input type="button" value="add" data-ng-click="add()"
+        data-ng-disabled="editting || policyForm.$invalid"> <input type="button" value="save"
+        data-ng-disabled="!editting" data-ng-click="save()" data-ng-disabled="policyForm.$invalid"><input
+        type="button" value="duplicate" data-ng-disabled="!editting" data-ng-click="add()"
+        data-ng-disabled="policyForm.$invalid">
+    </form>
+  </div>
+</body>
+</html>

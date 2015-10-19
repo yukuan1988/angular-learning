@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body data-ng-app>
+  <div data-ng-controller="simpleController">
+    <strong>First name:</strong> {{firstName}}<br />
+    <strong>Last name:</strong> <span data-ng-bind="lastName"></span><br />
+    <strong>Full name:</strong> {{getFullName()}}<br />
+    <br />
+    <label>Set the first name: <input type="text" data-ng-model="firstName"/></label><br />
+    <label>Set the last name: <input type="text" data-ng-model="lastName"/></label>
+  </div>
+</body>
+</html>

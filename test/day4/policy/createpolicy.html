@@ -1,0 +1,24 @@
+<a data-ng-href="#/policy"><i class="fa fa-backward">&nbsp;Back to Policy List</i></a>
+<form name="policyForm" novalidate>
+  <label>
+    Subject: <input data-ng-model="policy.subject" required maxlength="20">
+  </label>
+  <label>
+    Resource: <input data-ng-model="policy.resource" required maxlength="20">
+  </label>
+  <label>
+    Action: <input data-ng-model="policy.action" required maxlength="20">
+  </label>
+  <label>
+    allow <input type="radio" data-ng-model="policy.ad" value="allow" required>
+  </label>
+  <label>
+    deny <input type="radio" data-ng-model="policy.ad" value="deny" required>
+  </label>
+  <br>
+  <label data-ng-show="policy.ad == 'deny'">
+    Alert Message
+    <textarea data-ng-model="policy.alertMsg"></textarea>
+  </label>
+  <br> <input type="button" value="add" data-ng-click="add()" data-ng-disabled="policyForm.$invalid">
+</form>

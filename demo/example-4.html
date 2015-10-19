@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script>
+//A simple module with no dependencies
+  angular.module("mainModule", [])
+    .controller("simpleController", function ($scope)
+    {
+      // Initialize the model
+      $scope.person = {
+        firstName: "John",
+        lastName: "Doe",
+
+        // Define utility functions on the model object
+        getFullName: function ()
+        {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+    });
+    </script>
+</head>
+
+<body data-ng-app="mainModule">
+  <div data-ng-controller="simpleController">
+    <strong>First name:</strong> {{person.firstName}}<br />
+    <strong>Last name:</strong> {{person.lastName}}<br />
+    <strong>Full name:</strong> {{person.getFullName()}}<br />
+    <br />
+    <label>Set the first name: <input type="text" data-ng-model="person.firstName"/></label><br />
+    <label>Set the last name: <input type="text" data-ng-model="person.lastName"/></label>
+  </div>
+</body>
+</html>

@@ -1,0 +1,429 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "⠤\n▸ component\\\n▸ policy\\\n▸ resource\\\n▸ services\\\n▸ share\\\n≡ app.js\n≡ index1.html\n≡ index.html",
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Windows",
+				"name": "𝌆 day4",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 3542,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/application/nginx-1.8.0/html/policystudio/day4/index.html",
+			"settings":
+			{
+				"buffer_size": 3539,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 2865,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "policy/policylist.html",
+			"settings":
+			{
+				"buffer_size": 2944,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 265.0,
+		"last_filter": "brows",
+		"selected_items":
+		[
+			[
+				"brows",
+				"Browse Mode: Left Sidebar"
+			],
+			[
+				"jshi",
+				"JSHint"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"highlight",
+				"HighlightWords: Highlight Words"
+			],
+			[
+				"browse",
+				"Browse Mode: Left Sidebar"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/kyu/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/application/nginx-1.8.0/html/policystudio/day3/app.js",
+		"/C/Users/kyu/AppData/Roaming/Sublime Text 3/Packages/FileBrowser/dired.sublime-settings",
+		"/C/Users/kyu/AppData/Roaming/Sublime Text 3/Packages/FileBrowser/Default.sublime-keymap",
+		"/C/application/nginx-1.8.0/html/policystudio/day6/index.html",
+		"/C/Users/kyu/AppData/Roaming/Sublime Text 3/Packages/User/packagecontrol.py",
+		"/C/script.txt",
+		"/C/Users/kyu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ui-",
+			"  // var id = Math.random();\n  // var service = {};\n  // console.log(this);\n  // service.listPolicy = function() {\n  // return $http.get('resource/policies.json').then(function(result) {\n  // // resolve the promise as the data\n  // return result.data;\n  // });\n  // }\n  // return service;\n  // });",
+			"remember",
+			"save"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 93,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								83
+							]
+						],
+						"settings":
+						{
+							"dired_count": 8,
+							"dired_index":
+							[
+								"⠤",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\component\\",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\policy\\",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\resource\\",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\services\\",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\share\\",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\app.js",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\index1.html",
+								"C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\index.html"
+							],
+							"dired_path": "C:\\application\\nginx-1.8.0\\html\\policystudio\\day4\\",
+							"dired_rename_mode": false,
+							"syntax": "Packages/FileBrowser/dired.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3460,
+								3460
+							]
+						],
+						"settings":
+						{
+							"highlight_size": 0,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/application/nginx-1.8.0/html/policystudio/day4/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								921,
+								921
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								596,
+								596
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "policy/policylist.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1587,
+								1587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.3,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"/",
+				"C:\\application\\nginx-1.8.0\\html\\policystudio\\day6\\index.html"
+			],
+			[
+				"pa",
+				"C:\\Users\\kyu\\AppData\\Roaming\\Sublime Text 3\\Packages\\User\\packagecontrol.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

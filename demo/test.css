@@ -1,0 +1,16 @@
+body {
+  font-size: 1.0em; }
+  body .attention {
+    font-size: 1.5em;
+    color: yellow; }
+  body .error {
+    font-size: 2em;
+    font-weight: bold;
+    color: red; }
+
+p {
+  font-family: sanrif; }
+  p a {
+    color: blue; }
+  p.demo {
+    color: orange; }

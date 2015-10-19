@@ -1,0 +1,18 @@
+<label>
+  <input data-ng-model="filterBy.text">
+</label>
+<button type="button" class="btn btn-sm btn-primary" data-ng-click="filterBy.status.enabled = !filterBy.status.enabled">Advanced</button>
+<div data-uib-collapse="!filterBy.status.enabled" style="border:1px solid #AAA; padding:3px 15px;">
+  <label>
+    <input name="filterByStatus" data-ng-model="filterBy.status.deactivated" type="checkbox" data-ng-true-value="true"
+      data-ng-false-value="false">Deactivated
+  </label>
+  <label>
+    <input name="filterByStatus" data-ng-model="filterBy.status.deployed" type="checkbox" data-ng-true-value="true"
+      data-ng-false-value="false">Deployed
+  </label>
+  <label>
+    <input name="filterByStatus" data-ng-model="filterBy.status.draft" type="checkbox" data-ng-true-value="true"
+      data-ng-false-value="false">Draft
+  </label>
+</div>
