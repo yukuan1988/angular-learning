@@ -1,0 +1,126 @@
+<div class="smaller-panel" data-ng-controller="PolicySearchCtroller as ctrl">
+  <div>
+    <div class="btn-group" data-uib-dropdown data-is-open="false" style="width:159px;">
+      <button id="filter-by-status-toggle-btn" type="button" class="btn btn-default btn-block" data-uib-dropdown-toggle data-ng-disabled="disabled">
+        Status:{{ctrl.filterStatusOptions[ctrl.filterStatus]}} <span class="caret"></span>
+      </button>
+      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="filter-by-status-toggle-btn" ng-click="$event.stopPropagation();">
+        <li role="menuitem">
+          <label class="nobold">
+            <input type="checkbox" value="all" ng-model="ctrl.filterStatus">&nbsp;All Statuses</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" data-ng-repeat="(key,value) in ctrl.filterStatusOptions">
+          <label class="nobold">
+            <input type="checkbox" value="{{key}}" ng-model="ctrl.filterStatus">&nbsp;{{value}}</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" class="btn-line">
+          <button type="button" class="btn btn-default btn-xs">Apply</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-default btn-xs">Cancel</button>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" data-uib-dropdown data-is-open="false" style="width:159px;">
+      <button id="filter-by-effect-toggle-btn" type="button" class="btn btn-default btn-block" data-uib-dropdown-toggle data-ng-disabled="disabled">
+        Policy Effect:{{ctrl.filterStatusOptions[ctrl.filterStatus]}} <span class="caret"></span>
+      </button>
+      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="filter-by-effect-toggle-btn" ng-click="$event.stopPropagation();">
+        <li role="menuitem">
+          <label class="nobold">
+            <input type="checkbox" value="all" ng-model="ctrl.filterStatus">&nbsp;All Statuses</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" data-ng-repeat="(key,value) in ctrl.filterStatusOptions">
+          <label class="nobold">
+            <input type="checkbox" value="{{key}}" ng-model="ctrl.filterStatus">&nbsp;{{value}}</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" class="btn-line">
+          <button type="button" class="btn btn-default btn-xs">Apply</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-default btn-xs">Cancel</button>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" data-uib-dropdown data-is-open="false" style="width:159px;">
+      <button id="filter-by-tag-toggle-btn" type="button" class="btn btn-default btn-block" data-uib-dropdown-toggle data-ng-disabled="disabled">
+        Tags:{{ctrl.filterStatusOptions[ctrl.filterStatus]}} <span class="caret"></span>
+      </button>
+      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="filter-by-tag-toggle-btn" ng-click="$event.stopPropagation();">
+        <li role="menuitem">
+          <label class="nobold">
+            <input type="checkbox" value="all" ng-model="ctrl.filterStatus">&nbsp;All Tags</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" data-ng-repeat="(key,value) in ctrl.filterStatusOptions">
+          <label class="nobold">
+            <input type="checkbox" value="{{key}}" ng-model="ctrl.filterStatus">&nbsp;{{value}}</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" class="btn-line">
+          <button type="button" class="btn btn-default btn-xs">Apply</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-default btn-xs">Cancel</button>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-group" data-uib-dropdown data-is-open="false" style="width:210px;">
+      <button id="filter-by-tag-toggle-btn" type="button" class="btn btn-default btn-block" data-uib-dropdown-toggle data-ng-disabled="disabled">
+        Modified Date:{{ctrl.filterStatusOptions[ctrl.filterStatus]}} <span class="caret"></span>
+      </button>
+      <ul class="uib-dropdown-menu" role="menu" aria-labelledby="filter-by-tag-toggle-btn" ng-click="$event.stopPropagation();">
+        <li role="menuitem">
+          <label class="nobold">
+            <input type="radio" name="filter-by-tag" value="all" ng-model="ctrl.filterStatus">&nbsp;Any Date</label>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" data-ng-repeat="(key,value) in ctrl.filterStatusOptions">
+          <label class="nobold">
+            <input type="radio" name="filter-by-tag" value="{{key}}" ng-model="ctrl.filterStatus">&nbsp;{{value}}</label>
+        </li>
+        <li role="menuitem">
+          <label class="nobold">
+            <input type="radio" name="filter-by-tag" value="all" ng-model="ctrl.filterStatus">&nbsp;Custom Period</label>
+          <br>
+          <div class="row">
+            <div class="col-md-2">From&nbsp;
+            </div>
+            <div class="col-md-9">
+              <p class="input-group">
+                <input type="text" class="form-control" placeholder="Date From" data-uib-datepicker-popup="dd-MM-yyyy" data-ng-model="ctrl.filter_by_date.from" data-is-open="ctrl.filter_by_date.status.from" data-ng-required="true" data-close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" data-ng-click="ctrl.filter_by_date.status.from = !ctrl.filter_by_date.status.from"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+              </p>
+            </div>
+            <div class="col-md-2">To&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="col-md-9">
+              <p class="input-group">
+                <input type="text" class="form-control" placeholder="Date To" data-uib-datepicker-popup="dd-MM-yyyy" data-ng-model="ctrl.filter_by_date.to" data-is-open="ctrl.filter_by_date.status.to" data-ng-required="true" data-close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" data-ng-click="ctrl.filter_by_date.status.to = !ctrl.filter_by_date.status.to"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li role="menuitem" class="btn-line">
+          <button type="button" class="btn btn-default btn-xs">Apply</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-default btn-xs">Cancel</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:10px;">
+  <div style="display:inline-block">
+    <div class="input-group" style="width:538px;">
+      <input type="text" class="form-control" placeholder="Search for policies" style="width:500px;">
+      <span class="input-group-addon btn"><i class="fa fa-search"></i></span>
+    </div>
+  </div>
+  <div style="display:inline-block">
+    <label><switch ng-model="ctrl.includeSubPolicy" class="green small"></switch>&nbsp;&nbsp;{{ ctrl.subpolicyLabel() }}</label>
+  </div>
+  </div>
+</div>

@@ -11,9 +11,9 @@ width:225px;
      text-align: left !important;
 }
 
+}
 .smaller-panel{
 font-size:13px !important;
-}
 }
 
 #main-content{
@@ -71,4 +71,25 @@ padding:0 0 0 15px !important;
 .clear{
 float:none;
 clear:both;
+}
+
+.uib-dropdown-menu{
+  >li{
+    padding-left: 12px;
+  }
+  .btn-line{
+    padding-left: 16px;
+  }
+}
+
+label.nobold{
+  font-weight: normal;
+}
+
+.dropdown-toggle{
+  text-align: left;
+}
+
+div.inline{
+  display:inline-block;
 }

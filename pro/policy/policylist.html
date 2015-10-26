@@ -1,11 +1,11 @@
-<div data-ui-view>
+<div data-ui-view data-ng-controller="PolicyListController as policyListCtrl">
   <div class="title-on-content">
     <div style="float: left;">
       <span>Policy Management</span>
     </div>
     <div style="float: right;">
       <button type="button" class="btn btn-default" data-ng-click="show_search = !show_search">
-        <i class="fa fa-search"></i>
+        <i class="fa" data-ng-class="{'fa-search':!show_search,'fa-chevron-up':show_search}"></i>
       </button>
       <button type="button" class="btn btn-default" data-ng-mouseenter="show_import_export = true"
         >
@@ -18,22 +18,22 @@
     <div class="clear"></div>
   </div>
   <div data-uib-collapse="!show_search">
-    <div class="well well-lg">Some content</div>
+    <div class="well well-lg" data-ng-include="'policy/component/search.html'"></div>
   </div>
   <div data-uib-collapse="!show_import_export" id="policy-import-export" data-ng-mouseleave="show_import_export = false">
   <div>
 	<div style="height: 40px;width: 34px; visibility: hidden;" data-ng-mouseleave="show_import_export = false"></div>
     <div class="well well-lg" data-ng-mouseleave="show_import_export = false">
-      <div id="u979" class="ax_paragraph">
-        <div id="u980" class="text">
+      <div class="ax_paragraph">
+        <div class="text">
           <p>
             <span><i class="fa fa-download"></i>&nbsp;&nbsp;Import Policies</span>
           </p>
         </div>
       </div>
 
-      <div id="u984" class="ax_paragraph">
-        <div id="u985" class="text">
+      <div class="ax_paragraph">
+        <div class="text">
           <p>
             <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Export All Policies</span>
           </p>
@@ -42,24 +42,17 @@
     </div>
   </div>
   </div>
-  <div data-ng-include="'share/search.html'"></div>
-  <table id="policyListTable">
-    <thead>
-      <tr>
-        <th>Subject</th>
-        <th>Action</th>
-        <th>Resource</th>
-        <th>Allow/Deny</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr data-ng-repeat="policy in policyList | filter : filterBy.text | filter : byStatus()"
+  <div></div>
+  <p><input type="checkbox" data-ng-model="policyListCtrl.allPolicyChecked" data-ng-change="policyListCtrl.checkAllPolicy(policyListCtrl.allPolicyChecked)"><span data-ng-show="policyListCtrl.hasPolicyChecked"><span><i class="fa fa-trash fa-2x"></i></span><span><i class="fa fa-check-square fa-2x">&nbsp;Deploy</i></span><span><i class="fa fa-upload fa-2x">&nbsp;Export</i></span></p>
+  <ul id="policyListTable" style="list-style-type: none;">
+      <li data-ng-repeat="policy in policyList | filter : filterBy.text | filter : byStatus()"
         class="policy {{policy.status}}">
-        <td>{{policy.subject}}</td>
-        <td>{{policy.action}}</td>
-        <td>{{policy.resource}}</td>
-        <td>{{policy.ad}}</td>
-        <td><span style="width: 75px; display: inline-block;">{{policy.status}}</span>
+        <input type="checkbox" data-ng-model="policy.checked" data-ng-change="policyListCtrl.policyCheckStatusChange()">
+        <span>{{policy.subject}}</span>
+        <span>{{policy.action}}</span>
+        <span>{{policy.resource}}</span>
+        <span>{{policy.ad}}</span>
+        <span><span style="width: 75px; display: inline-block;">{{policy.status}}</span>
           <button class="button btn-success" data-ng-disabled="policy.status != 'deactivated'"
             data-ng-click="policy.status = 'draft'">Activate</button>
           <button class="button btn-info" data-ng-disabled="policy.status != 'deployed'"
@@ -68,8 +61,8 @@
             data-ng-click="policy.status = 'deployed'">Deploy</button> <a href="#/editPolicy"><i title="Edit"
             data-ng-click="editPolicy(policy)" class="fa fa-pencil-square-o" style="cursor: pointer;"></i></a> <i
           title="Delete" data-ng-click="deletePolicy($index)" class="fa fa-times" style="cursor: pointer;"></i>
-      </tr>
-    </tbody>
-  </table>
+      </li>
+  </ul>
+  {{policyList | filter}}
   <br> <a data-ui-sref=".create">Create</a>
 </div>

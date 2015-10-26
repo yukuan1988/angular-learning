@@ -6,10 +6,12 @@
         <script src="../lib/angular/angular-route.js"></script>
         <script src="../lib/angular-ui/bootstrap/ui-bootstrap-tpls-0.14.1.js"></script>
         <script src="../lib/angular-ui/router/angular-ui-router.js"></script>
+        <script src="../lib/angular-ui-switch-master/angular-ui-switch.js"></script>
         <!-- <script src="../lib/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.js"></script> -->
         <script src="app.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link href="../lib/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="../lib/angular-ui-switch-master/angular-ui-switch.css" rel="stylesheet">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic">
         <link rel="stylesheet" href="../assets/css/styles.css">
     </head>
@@ -24,11 +26,11 @@
             <script type="text/ng-template" id="group-template.html">
                 <div class="panel {{panelClass || 'panel-default'}}">
                     <div class="panel-heading">
-                            <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+                            <a href tabindex="0" class="accordion-toggle" data-ng-click="toggleOpen()" data-uib-accordion-transclude="heading">
                             <span data-ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
                     </div>
-                    <div class="panel-collapse collapse" uib-collapse="!isOpen">
-                            <div class="panel-body" ng-transclude></div>
+                    <div class="panel-collapse collapse" data-uib-collapse="!isOpen">
+                            <div class="panel-body" data-ng-transclude></div>
                     </div>
                 </div>
             </script>
