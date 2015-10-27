@@ -139,8 +139,7 @@
         item.checked = checked;
       });
     };
-
-    this.policyCheckStatusChange = function(){
+    this.policyCheckStatusChange = function() {
       var allPolicyChecked = true;
       var hasPolicyChecked = false;
       angular.forEach($scope.policyList, function(item) {
@@ -150,10 +149,16 @@
       this.allPolicyChecked = allPolicyChecked;
       this.hasPolicyChecked = hasPolicyChecked;
     };
-
-    this.checkAll = function(){
+    this.checkAll = function() {
       this.hasPolicyChecked = !this.hasPolicyChecked;
-    }
+    };
+    var optionOpen = [];
+    this.openOption = function(policyIndex, open) {
+      if (angular.isDefined(open)) optionOpen[policyIndex] = open;
+      else return angular.isDefined(optionOpen[policyIndex]) ? optionOpen[policyIndex] : false;
+    };
+
+    this.policy_sortby = 'updateTime';
   });
   app.controller('PolicyCreateController', function($scope) {
     // Initialization

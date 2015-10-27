@@ -1,95 +1,192 @@
-body{
-font-family:'Fira Sans Bold', 'Fira Sans';
-}
-#main-nav{
-font-weight:bold;
-font-size:13px;
-width:225px;
-//background-color:#3f51b5;
-//color: #FFFFFF;
-.panel-body{
-     text-align: left !important;
+$cc_green: rgb(0, 200, 83);
+body {
+  font-family: 'Fira Sans Bold', 'Fira Sans';
 }
 
-}
-.smaller-panel{
-font-size:13px !important;
+#main-nav {
+  font-weight: bold;
+  font-size: 13px;
+  width: 225px;
+  //background-color:#3f51b5;
+  //color: #FFFFFF;
+  .panel-body {
+    text-align: left !important;
+  }
 }
 
-#main-content{
-width:1005px;
-.title-on-content{
-	height: 80px;
-	padding:20px 18px 20px 36px;
-	font-weight: 400;
+.smaller-panel {
+  font-size: 13px !important;
+}
+
+#main-content {
+  width: 1115px;
+  .title-on-content {
+    height: 80px;
+    font-weight: 400;
     font-style: normal;
     font-size: 18px;
     text-align: left;
-  //  color: rgb(52,71,79);
-	&>div{
-		height:40px;
-	}
-}
-#policy-import-export{
-text-align: right;
-z-index:10;
-position: absolute;
-right: 33px;
-top: 15px;
-// padding-top: 40px;
-&>div{
-display:inline-block;
-}
-}
-}
-.policy{
-  td{
-    padding:3px 5px;
-    text-align: center;
+    color: rgb(52, 71, 79);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+    &>div {
+      height: 40px;
+    }
   }
-  &.deployed{
-    background-color:green;
+  #policy-import-export {
+    text-align: right;
+    z-index: 10;
+    position: absolute;
+    right: 33px;
+    top: 15px;
+    // padding-top: 40px;
+    &>div {
+      display: inline-block;
+    }
   }
-  &.deactivated{
-    background-color:orange;
-  }
-  &.draft{
-    background-color:#00A;
-    color:white;
+  #policy-search-btn {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    color: $cc_green;
+    .times {
+      color: grey;
+    }
   }
 }
 
-.panel-body{
-padding:0 0 0 15px !important;
+#policy-list {
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+#btn-create-policy {
+  background-color: $cc_green;
+  color: white;
+}
+
+.policy-option {
+  color: $cc_green;
+}
+
+.btn-cc-big {
+  font-size: 20px;
+}
+
+.policy {
+  cursor: pointer;
+  border-radius: 3px;
+  border-top-left-radius: 0px;
+  height: 130px;
+  margin-bottom: 26px;
+  border: 1px solid #DDD;
+  td {
+    padding: 3px 5px;
+    text-align: center;
+  }
+  .status {
+    width: 84px;
+    text-align: center;
+    height: 26px;
+    font-size: 11px;
+    color: rgb(69, 70, 77);
+    display: inline-block;
+    position: absolute;
+    right: 16px;
+    border-radius: 2px;
+    padding: 5px;
+    color: white;
+  }
+  &.deployed .status {
+    background-color: #3f51b5;
+  }
+  &.saved .status {
+    background-color: #a2a2a5;
+  }
+  &.draft .status {
+    background-color: #00A;
+    color: white;
+  }
+  .policy-name {
+    font-size: 15px;
+    color: rgb(52, 71, 79);
+  }
+  .description {
+    font-size: 13px;
+    color: rgb(69, 70, 77);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &:hover {
+    border-color: $cc_green;
+  }
+  .effect {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-right: 29px solid transparent;
+    border-top: 29px solid #f00;
+  }
+  &.Allow {
+    .effect {
+      border-top-color: $cc_green;
+    }
+  }
+  &.Deny {
+    .effect {
+      border-top-color: red;
+    }
+  }
+  .tag {
+    border: 1px solid #777;
+    margin-right: 5px;
+    color: rgb(106, 107, 113);
+    font-size: 11px;
+    border-radius: 8px;
+    padding: 3px 8px;
+    &:hover {
+      background-color: #AAA;
+    }
+  }
+  .option {
+    z-index: 9;
+    position: absolute;
+    right: 35px;
+    top: 0;
+    width: 260px;
+  }
+}
+
+.panel-body {
+  padding: 0 0 0 15px !important;
 }
 
 .panel-group {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
-
-.clear{
-float:none;
-clear:both;
+.clear {
+  float: none;
+  clear: both;
 }
 
-.uib-dropdown-menu{
-  >li{
+.uib-dropdown-menu {
+  >li {
     padding-left: 12px;
   }
-  .btn-line{
+  .btn-line {
     padding-left: 16px;
   }
 }
 
-label.nobold{
+label.nobold {
   font-weight: normal;
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
   text-align: left;
 }
 
-div.inline{
-  display:inline-block;
+div.inline {
+  display: inline-block;
 }

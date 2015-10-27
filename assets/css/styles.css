@@ -12,14 +12,15 @@ body {
   font-size: 13px !important; }
 
 #main-content {
-  width: 1005px; }
+  width: 1115px; }
   #main-content .title-on-content {
     height: 80px;
-    padding: 20px 18px 20px 36px;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    text-align: left; }
+    text-align: left;
+    color: #34474f;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.25); }
     #main-content .title-on-content > div {
       height: 40px; }
   #main-content #policy-import-export {
@@ -30,17 +31,93 @@ body {
     top: 15px; }
     #main-content #policy-import-export > div {
       display: inline-block; }
+  #main-content #policy-search-btn {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    color: #00c853; }
+    #main-content #policy-search-btn .times {
+      color: grey; }
 
-.policy td {
-  padding: 3px 5px;
-  text-align: center; }
-.policy.deployed {
-  background-color: green; }
-.policy.deactivated {
-  background-color: orange; }
-.policy.draft {
-  background-color: #00A;
+#policy-list {
+  padding-left: 40px;
+  margin-top: 20px; }
+
+#btn-create-policy {
+  background-color: #00c853;
   color: white; }
+
+.policy-option {
+  color: #00c853; }
+
+.btn-cc-big {
+  font-size: 20px; }
+
+.policy {
+  cursor: pointer;
+  border-radius: 3px;
+  border-top-left-radius: 0px;
+  height: 130px;
+  margin-bottom: 26px;
+  border: 1px solid #DDD; }
+  .policy td {
+    padding: 3px 5px;
+    text-align: center; }
+  .policy .status {
+    width: 84px;
+    text-align: center;
+    height: 26px;
+    font-size: 11px;
+    color: #45464d;
+    display: inline-block;
+    position: absolute;
+    right: 16px;
+    border-radius: 2px;
+    padding: 5px;
+    color: white; }
+  .policy.deployed .status {
+    background-color: #3f51b5; }
+  .policy.saved .status {
+    background-color: #a2a2a5; }
+  .policy.draft .status {
+    background-color: #00A;
+    color: white; }
+  .policy .policy-name {
+    font-size: 15px;
+    color: #34474f; }
+  .policy .description {
+    font-size: 13px;
+    color: #45464d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .policy:hover {
+    border-color: #00c853; }
+  .policy .effect {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-right: 29px solid transparent;
+    border-top: 29px solid #f00; }
+  .policy.Allow .effect {
+    border-top-color: #00c853; }
+  .policy.Deny .effect {
+    border-top-color: red; }
+  .policy .tag {
+    border: 1px solid #777;
+    margin-right: 5px;
+    color: #6a6b71;
+    font-size: 11px;
+    border-radius: 8px;
+    padding: 3px 8px; }
+    .policy .tag:hover {
+      background-color: #AAA; }
+  .policy .option {
+    z-index: 9;
+    position: absolute;
+    right: 35px;
+    top: 0;
+    width: 260px; }
 
 .panel-body {
   padding: 0 0 0 15px !important; }

@@ -1,68 +1,82 @@
 <div data-ui-view data-ng-controller="PolicyListController as policyListCtrl">
-  <div class="title-on-content">
-    <div style="float: left;">
-      <span>Policy Management</span>
-    </div>
-    <div style="float: right;">
-      <button type="button" class="btn btn-default" data-ng-click="show_search = !show_search">
-        <i class="fa" data-ng-class="{'fa-search':!show_search,'fa-chevron-up':show_search}"></i>
-      </button>
-      <button type="button" class="btn btn-default" data-ng-mouseenter="show_import_export = true"
-        >
-        <i class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></i>
-      </button>
-      <button type="button" class="btn btn-default">
-        <i class="fa fa-plus-square"></i>&nbsp;&nbsp;CREATE POLICY
-      </button>
-    </div>
-    <div class="clear"></div>
-  </div>
-  <div data-uib-collapse="!show_search">
-    <div class="well well-lg" data-ng-include="'policy/component/search.html'"></div>
-  </div>
-  <div data-uib-collapse="!show_import_export" id="policy-import-export" data-ng-mouseleave="show_import_export = false">
-  <div>
-	<div style="height: 40px;width: 34px; visibility: hidden;" data-ng-mouseleave="show_import_export = false"></div>
-    <div class="well well-lg" data-ng-mouseleave="show_import_export = false">
-      <div class="ax_paragraph">
-        <div class="text">
-          <p>
-            <span><i class="fa fa-download"></i>&nbsp;&nbsp;Import Policies</span>
-          </p>
+    <div class="title-on-content">
+        <div style="float: left;;padding:20px 0 20px 20px; width:1005px">
+            <div class="row" style="float: left;padding-top: 10px;width: 500px;">
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                    <span>Policy Management</span>
+                </div>
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" data-ng-show="show_search">
+                    <select class="form-control">
+                        <option value="">SAVED SEARCH</option>
+                    </select>
+                </div>
+            </div>
+            <div style="float: right; margin-right:20px;">
+                <button type="button" class="btn btn-default" data-ng-mouseenter="show_import_export = true">
+                <i class="glyphicon glyphicon-option-vertical policy-option btn-cc-big" aria-hidden="true"></i>
+                </button>
+                <a data-ui-sref=".create" class="btn btn-default btn-cc-big" id="btn-create-policy"><i class="fa fa-plus"></i>&nbsp;&nbsp;CREATE POLICY</a>
+            </div>
+            <div class="clear"></div>
         </div>
-      </div>
-
-      <div class="ax_paragraph">
-        <div class="text">
-          <p>
-            <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Export All Policies</span>
-          </p>
+        <div style="float: left; width: 80px;">
+            <button id="policy-search-btn" type="button" class="btn btn-default" data-ng-click="show_search = !show_search">
+            <i class="fa fa" data-ng-class="{'fa-search':!show_search,'fa-times':show_search}"></i>
+            </button>
         </div>
-      </div>
+        <div class="clear"></div>
     </div>
-  </div>
-  </div>
-  <div></div>
-  <p><input type="checkbox" data-ng-model="policyListCtrl.allPolicyChecked" data-ng-change="policyListCtrl.checkAllPolicy(policyListCtrl.allPolicyChecked)"><span data-ng-show="policyListCtrl.hasPolicyChecked"><span><i class="fa fa-trash fa-2x"></i></span><span><i class="fa fa-check-square fa-2x">&nbsp;Deploy</i></span><span><i class="fa fa-upload fa-2x">&nbsp;Export</i></span></p>
-  <ul id="policyListTable" style="list-style-type: none;">
-      <li data-ng-repeat="policy in policyList | filter : filterBy.text | filter : byStatus()"
-        class="policy {{policy.status}}">
-        <input type="checkbox" data-ng-model="policy.checked" data-ng-change="policyListCtrl.policyCheckStatusChange()">
-        <span>{{policy.subject}}</span>
-        <span>{{policy.action}}</span>
-        <span>{{policy.resource}}</span>
-        <span>{{policy.ad}}</span>
-        <span><span style="width: 75px; display: inline-block;">{{policy.status}}</span>
-          <button class="button btn-success" data-ng-disabled="policy.status != 'deactivated'"
-            data-ng-click="policy.status = 'draft'">Activate</button>
-          <button class="button btn-info" data-ng-disabled="policy.status != 'deployed'"
-            data-ng-click="policy.status = 'deactivated'">Deactivate</button>
-          <button class="button btn-warning" data-ng-disabled="policy.status != 'draft'"
-            data-ng-click="policy.status = 'deployed'">Deploy</button> <a href="#/editPolicy"><i title="Edit"
-            data-ng-click="editPolicy(policy)" class="fa fa-pencil-square-o" style="cursor: pointer;"></i></a> <i
-          title="Delete" data-ng-click="deletePolicy($index)" class="fa fa-times" style="cursor: pointer;"></i>
-      </li>
-  </ul>
-  {{policyList | filter}}
-  <br> <a data-ui-sref=".create">Create</a>
+    <div data-uib-collapse="!show_search">
+        <div class="well well-lg" data-ng-include="'policy/component/search.html'"></div>
+    </div>
+    <div data-uib-collapse="!show_import_export" id="policy-import-export" data-ng-mouseleave="show_import_export = false">
+        <div>
+            <div style="height: 40px;width: 34px; visibility: hidden;" data-ng-mouseleave="show_import_export = false"></div>
+            <div class="well well-lg" data-ng-mouseleave="show_import_export = false">
+                <div class="ax_paragraph">
+                    <div class="text">
+                        <p>
+                        <span><i class="fa fa-download"></i>&nbsp;&nbsp;Import Policies</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="ax_paragraph">
+                    <div class="text">
+                        <p>
+                        <span><i class="fa fa-upload"></i>&nbsp;&nbsp;Export All Policies</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <ul id="policyListTable" style="list-style-type: none;">
+        <li><p style=" height:34px; margin-top:20px; margin-bottom:20px;">
+          <span style="display:inline-block;width:4%;text-align: center;vertical-align: top;">
+          <input type="checkbox" data-ng-model="policyListCtrl.allPolicyChecked" data-ng-change="policyListCtrl.checkAllPolicy(policyListCtrl.allPolicyChecked)">
+          </span>
+        <span data-ng-show="policyListCtrl.hasPolicyChecked">
+        <button class="btn btn-default" title="Delete"><i class="fa fa-trash"></i></button>&nbsp;
+        <button class="btn btn-default" title="Deploy"><i class="fa fa-arrow-circle-o-down">&nbsp;</i></button>&nbsp;
+        <button class="btn btn-default" title="Export"><i class="fa fa-upload">&nbsp;</i></button>
+        </span>
+        <span style="position: absolute; right: 15px;width: 220px;"><span style="position: absolute;">SORT BY</span><span style="position: absolute;right: 0; width: 155px;"><select class="form-control" data-ng-model="policyListCtrl.policy_sortby">
+            <option value="updateTime">Last Updated</option>
+            <option value="createdDate">Created Date</option>
+            <option value="name">Name</option>
+            <option value="status">Status</option>
+            <option value="effect">Policy Effect</option>
+        </select></span></span></p>
+        </li>
+            <li data-ng-repeat="policy in policyList | filter : filterBy.text | filter : byStatus() | orderBy : policyListCtrl.policy_sortby" ng-init="policyIndex = $index">
+                <div class="policy {{policy.status}} {{policy.effect}}"><div>
+                    <div class="effect"></div>
+                    <div class="status text-uppercase">{{policy.status}}</div>
+                </div>
+                <div data-ng-include="'policy/component/apolicy.html'">
+                </div>
+            </div>
+        </li>
+    </ul>
+<br>
 </div>
