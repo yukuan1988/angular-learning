@@ -4,7 +4,8 @@ body {
 #main-nav {
   font-weight: bold;
   font-size: 13px;
-  width: 225px; }
+  width: 225px;
+  padding: 10px 0 0 10px; }
   #main-nav .panel-body {
     text-align: left !important; }
 
@@ -38,6 +39,9 @@ body {
     color: #00c853; }
     #main-content #policy-search-btn .times {
       color: grey; }
+  #main-content .policy-check {
+    width: 20px;
+    height: 20px; }
 
 #policy-list {
   padding-left: 40px;
